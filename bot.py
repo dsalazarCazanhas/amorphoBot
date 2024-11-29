@@ -29,7 +29,7 @@ def main() -> None:
     # Create the Application and pass it your bot's token.
     application = (
         ApplicationBuilder()
-        .token("7283089275:AAFiNerCfDdUZY4pT-noATezv5CoXNqppRg")
+        .token("telegram-token")
         .connect_timeout(30)
         .pool_timeout(15)
         .build()
