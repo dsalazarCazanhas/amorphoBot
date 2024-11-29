@@ -1,0 +1,15 @@
+services:
+  telegramBot:
+    image: amorphobot:0.1
+    build: .
+    container_name: "amorpho-bot"
+    restart: unless-stopped
+    networks:
+      - amorphonet
+    command:
+      - "python"
+      - "bot.py"
+
+networks:
+  amorphonet:
+    driver: bridge
