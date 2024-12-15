@@ -1,5 +1,6 @@
 import logging
 
+from os import getenv as genv
 from telegram import Update, constants
 from telegram.ext import (
     ApplicationBuilder,
@@ -9,6 +10,8 @@ from telegram.ext import (
     CallbackContext,
     filters,
 )
+
+token=genv("TEL_TOKEN")
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -29,7 +32,7 @@ def main() -> None:
     # Create the Application and pass it your bot's token.
     application = (
         ApplicationBuilder()
-        .token("telegram-token")
+        .token(token)
         .connect_timeout(30)
         .pool_timeout(15)
         .build()
